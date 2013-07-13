@@ -1,0 +1,13 @@
+((greater x y) ((greater x z) (greater z y)))
+((greater x y)    ((greater x z)   
+(greater z y))) ((anotherHead))   
+    (   (greater z 3))
+
+((less x y) ((less x 4) (less 3 y)     ))
+(( some x y  ) ((some     x 4) ( some 3 y)     ))
+587q09487u
+(aoidfjaeo)
+)))))))))))))))))
+(
+((more a b) ((mor)e c d)))
+((head))

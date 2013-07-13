@@ -1,0 +1,40 @@
+// HornClauseLab.cpp
+//
+// Contains the program's main function, which parses a file of horn clauses, adds 
+// unique predicates, variables, and constants to a symbol table, and unifies the 
+// predicates through substitution.
+
+//#include "stdafx.h"
+#include "../include/HornParser.h"
+
+using namespace std;
+
+enum ERROR_CODE {NO_ERROR,USAGE,FILE_ERROR};
+const char* usage;
+
+int main(int argc, char* argv[])
+{
+	usage = "Usage: hcmgr.exe process <file_name>";
+	if (argc == 3) {
+		string process = argv[1];
+		if(process == "process") {
+			string filename = argv[2];
+			HornParser parser;
+			try {
+				SymbolTable symtab = parser.parseHornFile(filename);
+				symtab.unifyAllPred();
+				cout << endl << endl << "Done" << endl;
+				return NO_ERROR;
+			} catch (string & file_error) {
+				if (file_error == "file_does_not_exist") {
+					return FILE_ERROR;
+				}
+			}
+			cout<< "----------Unifying results---------" <<  endl;
+			
+		}
+	}
+
+	cout << usage << endl;
+	return USAGE;
+}
