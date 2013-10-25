@@ -9,6 +9,11 @@ Tommy Powers
 Compilation and Run Instructions:
 ===========================================================================================
 
+This code has been ported so that it can be compiled on Unix machines as well as Windows, but
+it was designed for an academic project with no expectation of portability, and as such does
+not provide certain safety methods (e.g. include guards) against being extended or moved onto
+other systems. Do so at your own risk.
+
 Windows: simply open your favorite IDE (This project was written and tested in Visual Studio 
 2010), add in all the source and header files and build the application. If you are not
 running it from command line, you may need to define the command line arguments before running
